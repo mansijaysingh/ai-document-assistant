@@ -1,0 +1,20 @@
+# Flask for web app and Gunicorn for deployment
+Flask==3.0.3
+gunicorn==21.2.0
+
+# .env file management
+python-dotenv==1.0.1
+
+# LangChain libraries for RAG
+langchain==0.2.1
+langchain-openai==0.1.7
+langchain-core==0.2.3
+
+# Library to load PDF documents
+pypdf==4.2.0
+
+# Library for vector store (FAISS from Facebook)
+faiss-cpu==1.8.0
+
+# Tokenizer library used by LangChain
+tiktoken==0.7.0

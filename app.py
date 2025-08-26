@@ -1,12 +1,12 @@
-from flask import Flask, render_template
-from langchain_openai import ChatOpenAI
+import os
+from flask import Flask,render_template,request
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.chains import create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html')
